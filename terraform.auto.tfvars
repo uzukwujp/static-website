@@ -1,0 +1,1 @@
+s3_bukets = [ "frontend-svc", "admin-fronted-svc","revamp-frontend-svc" ]
