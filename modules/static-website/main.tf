@@ -10,7 +10,7 @@ resource "aws_s3_bucket" "s3_bucket" {
 resource "aws_s3_bucket_ownership_controls" "s3_bucket_ownership_control" {
   bucket = aws_s3_bucket.s3_bucket.id
   rule {
-    object_ownership = "BucketOwnerPreferred"
+    object_ownership = "ObjectWriter"
   }
 }
 
@@ -81,7 +81,7 @@ resource "aws_cloudfront_origin_access_identity" "oai" {
 # Creating cloudfront distribution
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
-    domain_name              = aws_s3_bucket.s3_bucket.bucket_regional_domain_name
+    domain_name              = var.domain_name
     origin_id                = local.s3_origin_id
     s3_origin_config {
       origin_access_identity = aws_cloudfront_origin_access_identity.oai.cloudfront_access_identity_path

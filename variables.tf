@@ -1,3 +1,3 @@
 variable "s3_bukets" {
-    type = list(string)
+    type = map(map(string))
 }

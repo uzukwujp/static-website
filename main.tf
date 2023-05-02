@@ -5,6 +5,7 @@ provider "aws" {
 
 module "static-website" {
     source = "./modules/static-website"
-    for_each = toset(var.s3_bukets)
-    bucket_name = each.value
+    for_each = var.s3_bukets
+    bucket_name = each.value["bucketName"]
+    domain_name = each.value["domainName"]
 }
