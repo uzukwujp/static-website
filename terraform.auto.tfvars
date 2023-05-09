@@ -1,12 +1,20 @@
 
   s3_bukets = {
-    "key1" = {
-      "bucketName" = "frontend-svc"
-      "domainName" = "frontend.svc.nonprod.darey.io"
+
+    frontend-svc = {
+      bucket_name = "frontend-svc"
+      created_status = false
     },
 
-    "key2" = {
-      "bucketName" = "admin-fronted-svc"
-      "domainName" = "admin.frontend.svc.nonprod.darey.io"
+    admin-fronted-svc = {
+      bucket_name = "admin-fronted-svc"
+      created_status = true
+      
+    },
+
+    frontend-landing-page = {
+      bucket_name = "frontend-landing-page"
+      created_status = true
     }
+     
   }
